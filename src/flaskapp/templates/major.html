@@ -11,17 +11,12 @@
     <!-- Star rating -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Hi-Club!</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/index.css" >
 
-    <style>
-        .container { padding-top: 30px; }
-        .checked {
-          color: orange;
-        }
-        #custom_padding {padding: 0px 0px 10px 0px;}
-        #custom_margin {margin: 0px 0px 5px 0px;}
-    </style>
-  </head>
+    <title>Hi-Club!</title>
+</head>
+
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -61,63 +56,34 @@
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
 
-  <div class="row">
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-left-primary shadow h-100 py-2">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <div class="h4 text-xs font-weight-bold text-dark text-uppercase mb-1" id="custom_padding">	Data Science and Python</div>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <div class="col-auto">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-left-primary shadow h-100 py-2">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <div class="h4 text-xs font-weight-bold text-dark text-uppercase mb-1" id="custom_padding">	Data Science and R</div>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <div class="col-auto">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="row">
+        {% for course_dict in course_list %}
 
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-left-primary shadow h-100 py-2">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <div class="h4 text-xs font-weight-bold text-dark text-uppercase mb-1" id="custom_padding">	Mathematics 1 for Data Science</div>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="h4 text-xs font-weight-bold text-dark text-uppercase mb-1" id="custom_padding">{{ course_dict['official_lecture_name'] }}</div>
+                        <div class="text-xs mb-1">{{ course_dict['official_prof_name'] }}</div>
+                            {{ course_dict['total_score'] }}
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                    </div>
+
+                    <div class="col-auto">
+                    </div>
+
+                </div>
             </div>
-            <div class="col-auto">
             </div>
-          </div>
         </div>
-      </div>
-    </div>
+
+        {% endfor %}
 
    </div>
 

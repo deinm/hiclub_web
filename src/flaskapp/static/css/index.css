@@ -1,0 +1,13 @@
+.in-btn::after {
+    clear: both;
+}
+
+.container { padding-top: 30px; }
+
+#custom_padding {padding: 0px 0px 10px 0px;}
+
+#custom_margin {margin: 0px 0px 5px 0px;}
+
+.checked {
+  color: orange;
+}
